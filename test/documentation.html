@@ -206,7 +206,7 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 <ul>
 	<li>Flexible and powerful content pipeline tool chain</li>
 	<li>Full featured editor</li>
-	<li>3D modeling tool exporters (including animation, hierarchy, physics, materials, shaders and user attributes)
+	<li>3D modeling tool exporters (including animation, hierarchy, physics, materials /2009.02.25: shaders/ and user attributes)
 	    <ul>
 	        <li>Autodesk Maya</li>
 	        <li>Autodesk 3ds MAX</li>
@@ -221,17 +221,17 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 <ul>
 	<li>Generic scripting support (LUA, Ruby, Small, ...)</li>
 	<li>Networking support
-		<ul>
-			<li>Peer-to-peer or Client/Server</li>
-			<li>NAT Traversal</li>
-		</ul>
+	<ul>
+		<li>NAT Punchthrough</li>
+		<li>Peer-to-peer or Client/Server</li>
+	</ul>
 	</li>
 	<li>Flexible XML-based file formats</li>
 	<li>Multi-Threading support</li>
 	<li>Cross-Platform</li>
 	<li>3D audio support</li>
-	<li>Built-in detailed stats and profiling system</li>
-	<li>Extensive documentation </li>	
+	<li>Built-in /2009.02.25: detailed/ stats and profiling system</li>
+	<li>/2009.02.25: Extensive documentation</li>
 </ul>
     
 
@@ -284,14 +284,14 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 	<td class="list" valign="top"><i>F10</i></td>
 	<td class="list" valign="top">Connect to remote debugger</td>
 </tr>
-<!--tr>
+<tr>
 	<td class="list" valign="top"><i>F11</i></td>
-	<td class="list" valign="top">Capture profile data</td>
+	<td class="list" valign="top">/COMMENTED:/ Capture profile data</td>
 </tr>
 <tr>
 	<td class="list" valign="top"><i>F12</i></td>
-	<td class="list" valign="top">Save captured profile data</td>
-</tr-->
+	<td class="list" valign="top">/COMMENTED:/ Save captured profile data</td>
+</tr>
 </table>
 <br /><br />
 
@@ -1021,6 +1021,7 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 <h3>setRotation</h3>
 <b>Description</b><br />
 <blockquote>Set rotation of a transform object</blockquote>
+<blockquote>2009.03.28: Set euler rotation of a transform object. Order ZY'X''</blockquote>
 <br />
 <b>Definition</b><br />
 <blockquote><i>function setRotation(integer transformId, float x, float y, float z)</i></blockquote>
@@ -1403,6 +1404,42 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 <br />
 <br /><br /><br />
 
+
+<h3>2009.02.25: setObjectMask</h3>
+<b>Description</b><br />
+<blockquote>Set object mask</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function setObjectMask(integer objectId, integer mask)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td><td><i>objectId</i></td><td>object id</td></tr>
+<tr><td><i>integer</i></td><td><i>mask</i></td><td>the object mask to set</td></tr>
+</table></blockquote>
+<br />
+<br /><br /><br />
+
+<h3>2009.02.25: getObjectMask</h3>
+<b>Description</b><br />
+<blockquote>Get object mask</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function getObjectMask(integer objectId)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td><td><i>objectId</i></td><td>object id</td></tr>
+</table></blockquote>
+<br />
+<b>Return Values</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td><td><i>mask</i></td><td>the object mask</td></tr>
+</table></blockquote>
+<br />
+<br /><br /><br />
+
+
 <h3>getTerrainHeightAtWorldPos</h3>
 <b>Description</b><br />
 <blockquote>get the terrain height at the given position</blockquote>
@@ -1693,12 +1730,11 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 <blockquote>Set shader parameter</blockquote>
 <br />
 <b>Definition</b><br />
-<blockquote><i>function setShaderParameter(integer shapeId, string parameterName, float x, float y, float z, float w, boolean shared)</i></blockquote>
+<blockquote><i>function setShaderParameter(integer shapeId, string parameterName, float x, float y, float z, float w, /2009.02.25: boolean shared/)</i></blockquote>
 <br />
 <b>Arguments</b><br />
 <blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
-<tr><td><i>integer</i></td><td><i>shapeId</i></td><td>shape id id</td></tr>
-<tr><td><i>string</i></td><td><i>parameterName</i></td><td>the name of the parameter</td></tr>
+<tr><td><i>integer</i></td><td><i>shapeId</i></td><td>camera id</td></tr>
 <tr><td><i>float</i></td><td><i>x</i></td><td>x value</td></tr>
 <tr><td><i>float</i></td><td><i>y</i></td><td>y value</td></tr>
 <tr><td><i>float</i></td><td><i>z</i></td><td>z value</td></tr>
@@ -1861,15 +1897,16 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 <blockquote>Overlap sphere objects</blockquote>
 <br />
 <b>Definition</b><br />
-<blockquote><i>function overlapSphere(float x, float y, float z, float radius, string overlapFunctionCallback)</i></blockquote>
+<blockquote><i>function overlapSphere(float x, float y, float z, float radius, string overlapFunctionCallback, /2009.09.28: object targetObject/)</i></blockquote>
 <br />
 <b>Arguments</b><br />
 <blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
-<tr><td><i>float</i></td><td><i>x</i></td><td>center x</td></tr>
-<tr><td><i>float</i></td><td><i>y</i></td><td>center y</td></tr>
-<tr><td><i>float</i></td><td><i>z</i></td><td>center z</td></tr>
+<tr><td><i>float</i></td><td><i>x</i></td><td>origin /2009.02.25: center/ x</td></tr>
+<tr><td><i>float</i></td><td><i>y</i></td><td>origin /2009.02.25: center/y</td></tr>
+<tr><td><i>float</i></td><td><i>z</i></td><td>origin /2009.02.25: center/ z</td></tr>
 <tr><td><i>float</i></td><td><i>radius</i></td><td>radius</td></tr>
 <tr><td><i>string</i></td><td><i>overlapFunctionCallback</i></td><td>overlap function callback</td></tr>
+<tr><td><i>object</i></td><td><i>targetObject</i></td><td>target object (optional), the callback function is called as a member function of targetObject</td></tr>
 </table></blockquote>
 <br />
 <b>Return Values</b><br />
@@ -1879,13 +1916,12 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 <br />
 <br /><br /><br />
 
-
-<h3>overlapBox</h3>
+<h3>2009.02.25: overlapBox</h3>
 <b>Description</b><br />
 <blockquote>Overlap box objects</blockquote>
 <br />
 <b>Definition</b><br />
-<blockquote><i>function overlapSphere(float x, float y, float z, float rx, float ry, float rz, float ex, float ey, float ez, string overlapFunctionCallback)</i></blockquote>
+<blockquote><i>function overlapBox(float x, float y, float z, float rx, float ry, float rz, float ex, float ey, float ez, string overlapFunctionCallback, /2009.02.25: object targetObject/)</i></blockquote>
 <br />
 <b>Arguments</b><br />
 <blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
@@ -1899,6 +1935,7 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 <tr><td><i>float</i></td><td><i>ey</i></td><td>extent y</td></tr>
 <tr><td><i>float</i></td><td><i>ez</i></td><td>extent z</td></tr>
 <tr><td><i>string</i></td><td><i>overlapFunctionCallback</i></td><td>overlap function callback</td></tr>
+<tr><td><i>object</i></td><td><i>targetObject</i></td><td>target object (optional), the callback function is called as a member function of targetObject</td></tr>
 </table></blockquote>
 <br />
 <b>Return Values</b><br />
@@ -2081,7 +2118,7 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 
 <h3>addTrigger</h3>
 <b>Description</b><br />
-<blockquote>Adds a trigger callback function<br/><br/>
+<blockquote>Adds trigger callback function<br/><br/>
 The transformId must have set the trigger flag and must be a static or a kinematic rigid body.<br/>
 The given triggerFunctionCallback is called, whenever a dynamic or kinematic body enters or leaves the region defined by the trigger geometry. Static objects do not trigger an event.<br/>
 See "trigger callback" in section "Custom callbacks"
@@ -3152,7 +3189,7 @@ See "trigger callback" in section "Custom callbacks"
 <tr><td><i>string</i></td><td><i>sampelFilename</i></td><td>sample file name (.wav or .ogg)</td></tr>
 <tr><td><i>float</i></td><td><i>radius</i></td><td>radius</td></tr>
 <tr><td><i>float</i></td><td><i>innerRadius</i></td><td>inner radius</td></tr>
-<tr><td><i>float</i></td><td><i>volume</i></td><td>inner radius</td></tr>
+<tr><td><i>float</i></td><td><i>volume</i></td><td>volume [0,1]</td></tr>
 <tr><td><i>integer</i></td><td><i>loops</i></td><td>loops</td></tr>
 </table></blockquote>
 <br />
@@ -3185,11 +3222,11 @@ See "trigger callback" in section "Custom callbacks"
 <blockquote>Get joystick/gampad axis value</blockquote>
 <br />
 <b>Definition</b><br />
-<blockquote><i>function getInputAxis(integer axisNumber)</i></blockquote>
+<blockquote><i>function getInputAxis(float axisNumber) /2008.12.18: getInputAxis(integer axisNumber)/</i></blockquote>
 <br />
 <b>Arguments</b><br />
 <blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
-<tr><td><i>integer</i></td><td><i>axisNumber</i></td><td>axis number [0=Input.AXIS_1, 5=Input.AXIS_6], </td></tr>
+<tr><td><i>float</i></td><td><i>axisNumber</i></td><td>axis number [0, 3] /2008.12.18: [0=Input.AXIS_1, 5=Input.AXIS_6], /</td></tr>
 </table></blockquote>
 <br />
 <b>Return Values</b><br />
@@ -3204,11 +3241,11 @@ See "trigger callback" in section "Custom callbacks"
 <blockquote>Get joystick/gampad button value</blockquote>
 <br />
 <b>Definition</b><br />
-<blockquote><i>function getInputButton(integer buttonNumber)</i></blockquote>
+<blockquote><i>function getInputButton(float buttonNumber) /2008.12.18: getInputButton(integer buttonNumber)/</i></blockquote>
 <br />
 <b>Arguments</b><br />
 <blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
-<tr><td><i>integer</i></td><td><i>buttonNumber</i></td><td>button number [0=Input.BUTTON_1, 15==Input.BUTTON_16]</td></tr>
+<tr><td><i>float</i></td><td><i>buttonNumber</i></td><td>button number [0, 15]</td></tr>
 </table></blockquote>
 <br />
 <b>Return Values</b><br />
@@ -3413,7 +3450,7 @@ See "trigger callback" in section "Custom callbacks"
 <blockquote>Startup network subsystem</blockquote>
 <br />
 <b>Definition</b><br />
-<blockquote><i>function netStartup(integer maxConnections, integer threadSleepTimer, string localHostAddress, integer port)</i></blockquote>
+<blockquote><i>function netStartup(integer maxConnections, integer threadSleepTimer, string localHostAddress, integer port, /2009.02.25: string packetReceivedCallback, object targetObject/)</i></blockquote>
 <br />
 <b>Arguments</b><br />
 <blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
@@ -3421,6 +3458,8 @@ See "trigger callback" in section "Custom callbacks"
 <tr><td><i>integer</i></td><td><i>threadSleepTimer</i></td><td>thread sleep timer (milliseconds)</td></tr>
 <tr><td><i>string</i></td><td><i>localHostAddress</i></td><td>local listen host address. Leave empty to disable listen port.</td></tr>
 <tr><td><i>integer</i></td><td><i>port</i></td><td>listen port number</td></tr>
+<tr><td><i>string</i></td><td><i>packetReceivedCallback</i></td><td>callback function which is called when a packet was received</td></tr>
+<tr><td><i>object</i></td><td><i>targetObject</i></td><td>target object (optional), the callback function is called as a member function of targetObject</td></tr>
 </table></blockquote>
 <br />
 <b>Return Values</b><br />
@@ -3989,6 +4028,20 @@ See "trigger callback" in section "Custom callbacks"
 <br />
 <br /><br /><br />
 
+<h3>2009.02.25: packet received callback</h3>
+<b>Description</b><br />
+<blockquote>This function is called when a network packet was received.</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function packetReceived(packetType, timestamp, streamId)</i></blockquote>
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td><td><i>packetType</i></td><td>type of the packet. All available types are stored in the Network table</td></tr>
+<tr><td><i>integer</i></td><td><i>timestamp</i></td><td>timestamp of when the packet was sent</td></tr>
+<tr><td><i>integer</i></td><td><i>streamId</i></td><td>id of the stream containing the packet data</td></tr>
+</table></blockquote>
+<br />
+<br /><br /><br />
 <a name="runtime_foundation_reference"><h2>Foundation Reference</h2></a>
 <a name="runtime_foundation_reference_scenegraph"><h2>Scenegraph</h2></a>
 <br />
@@ -5650,7 +5703,7 @@ section. Shapes, materials and particle systems are stored as references.<br />
 </tr>
 <tr>
 	<td class="list" valign="top">rotation</td>
-	<td class="list" valign="top">Rotation</td>
+	<td class="list" valign="top">Rotation, /2009.03.28: euler order ZY'X'' /</td>
 	<td class="list" valign="top">complex</td>
 	<td class="list" valign="top">yes</td>
 </tr>
@@ -5830,13 +5883,13 @@ section. Shapes, materials and particle systems are stored as references.<br />
 	<td class="list" valign="top">yes</td>
 </tr>
 <tr>
-	<td class="list" valign="top">driveSpring</td>
-	<td class="list" valign="top">Drive spring</td>
+	<td class="list" valign="top">driveDamping</td>
+	<td class="list" valign="top">Drive damping</td>
 	<td class="list" valign="top">double</td>
 	<td class="list" valign="top">yes</td>
 </tr>
 <tr>
-	<td class="list" valign="top">solverIterationCount</td>
+	<td class="list" valign="top">2009.01.25: solverIterationCount</td>
 	<td class="list" valign="top">Solver iteration count</td>
 	<td class="list" valign="top">integer</td>
 	<td class="list" valign="top">yes</td>
@@ -6335,7 +6388,7 @@ Motions are defined in this part. Clips are the basic building block and allow N
    
 
 
-	<form method="POST" action="?r=291741338">
+	<form method="POST" action="?r=671694171">
 	<input type="hidden" name="greenstoneX" value="1" />
 
 	<span class="newsHeading">Login <img border="0" src="images/misc/login.png" alt="Login" /></span>
@@ -6365,11 +6418,11 @@ Motions are defined in this part. Clips are the basic building block and allow N
 	
 	<span class="newsHeading">Contact</span>
 	<img border="0" src="images/misc/contact.gif" alt="contact" />
-	<!--ul>
+	<ul>
 		<li>Christian Ammann (giants-software.ch cammann)</li>
 		<li>Stefan Geiger (giants-software.ch sgeiger)</li>
 		<li>Thomas Brunner (giants-software.ch tbrunner)</li>
-	</ul-->
+	</ul>
 	
 	<p class="filler"></p>
     <p><img src="images/giantsLogo01.png" alt="GIANTS Logo" /></p></div>
@@ -6380,7 +6433,7 @@ Motions are defined in this part. Clips are the basic building block and allow N
     </div>
     <!-- ##### Footer ##### -->
     <div id="footer">
-      &copy; 2009 <a target="_NEW" href="http://www.giants-software.com" title="GIANTS Software GmbH">GIANTS Software GmbH</a>, All Rights Reserved.
+      &copy; 2007-2025 <a target="_NEW" href="http://www.giants-software.com" title="GIANTS Software GmbH">GIANTS Software GmbH</a>, All Rights Reserved.
     </div>
   </body>
 </html>
