@@ -38,11 +38,12 @@
 
 		<div class="subHeader-left">
 			&nbsp;&nbsp;
-			<a href="http://gdn.giants.ch/index.php" title="GDN - Home">Home</a> |
-			<a href="http://gdn.giants.ch/documentation.php" title="GDN - Documentation">Documentation</a> |
-			<a href="http://gdn.giants.ch/tutorials.php" title="GDN - Tutorials">Tutorials</a> |
-			<a href="http://gdn.giants.ch/downloads.php" title="GDN - Downloads">Downloads</a> |
-			<a href="http://gdn.giants.ch/newsletter.php" title="GDN - Newsletter">Newsletter</a>
+			<a href="index.php" title="GDN - Home">Home</a> |
+            <a href="license.php" title="GDN - License">Store</a> |			
+			<a href="documentation.php" title="GDN - Documentation">Documentation</a> |
+			<a href="tutorials.php" title="GDN - Tutorials">Tutorials</a> |
+			<a href="downloads.php" title="GDN - Downloads">Downloads</a> |
+			<a href="newsletter.php" title="GDN - Newsletter">Newsletter</a>
         </div>
 
 		<div class="subHeader-right">
@@ -179,12 +180,12 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 	<li>Customizable shaders</li>
 	<li>Multi layered terrain</li>
 	<li>Scene graph representation</li>
-	<li>Dynamic foliage system</li>
+	<li>/2009.05.24: Flexible/ Dynamic foliage system</li>
 </ul>
 
 <h3>Physics</h3>
 <ul>
-	<li>Rigid Body physics
+	<li>Rigid Body physics</li>
 	<li>Advanced character control</li>
 	<li>Articulated vehicle dynamics</li>
 	<li>Ragdoll dynamics</li>
@@ -254,7 +255,7 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 </tr>
 <tr>
 	<td class="list" valign="top"><i>F3</i></td>
-	<td class="list" valign="top">Toggle animations clips</td>
+	<td class="list" valign="top">Toggle animations clips /2009.04.27: Toggle frame rate limiter/</td>
 </tr>
 <tr>
 	<td class="list" valign="top"><i>F4</i></td>
@@ -278,7 +279,7 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 </tr>
 <tr>
 	<td class="list" valign="top"><i>F9</i></td>
-	<td class="list" valign="top">Connect to physics remote debugger</td>
+	<td class="list" valign="top">Connect to physics visual remote debugger (VRD)</td>
 </tr>
 <tr>
 	<td class="list" valign="top"><i>F10</i></td>
@@ -298,7 +299,7 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 
 <a name="runtime_console"><h2>Console Command Reference</h2></a>
 <br />
-<h3>doFrameLimit</h3>
+<h3>doFrameLimit /2009.04.27: enableFramerateLimit/</h3>
 <b>Description</b><br />
 <blockquote>Enable/disable frame per second limiter</blockquote><br />
 
@@ -306,7 +307,7 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 <b>Description</b><br />
 <blockquote>Quits application</blockquote><br />
 
-<h3>frameLimitFPS</h3>
+<h3>frameLimitFPS /2009.04.27: framerateLimitFPS/</h3>
 <b>Description</b><br />
 <blockquote>Frame per second limit attribute</blockquote><br />
 
@@ -358,13 +359,18 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 <b>Description</b><br />
 <blockquote>Show debug transform group frames</blockquote><br />
 
-<h3>show_fps</h3>
+<h3>show_fps /2009.04.27: showFps/</h3>
 <b>Description</b><br />
 <blockquote>Show frames per second</blockquote><br />
 
 <h3>sortGeometry</h3>
 <b>Description</b><br />
 <blockquote>Sort render queue by material sort id</blockquote><br />
+
+<h3>2009.04.27: parallelRenderingAndPhysics</h3>
+<b>Description</b><br />
+<blockquote>Enable parallel rendering and physics</blockquote><br />
+
 <br />
 <br />
 <br />
@@ -497,6 +503,27 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 </table></blockquote>
 <br />
 <br /><br /><br />
+
+<h3>2009.04.27: setVolumeFog</h3>
+<b>Description</b><br />
+<blockquote>Set volume fog properties</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function setVolumeFog(string fogType, float startDistanceOrDensity, float endDistance, float yPlane, float r, float g, float b)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>string</i></td><td><i>fogType</i></td><td>fog type ("none", "linear", "exp" or "exp2")</td></tr>
+<tr><td><i>float</i></td><td><i>startDistanceOrDensity</i></td><td>start distance (linear) or density (exp and exp2)</td></tr>
+<tr><td><i>float</i></td><td><i>endDistance</i></td><td>end distance (linear)</td></tr>
+<tr><td><i>float</i></td><td><i>yPlane</i></td><td>y plane value</td></tr>
+<tr><td><i>float</i></td><td><i>r</i></td><td>color r</td></tr>
+<tr><td><i>float</i></td><td><i>g</i></td><td>color g</td></tr>
+<tr><td><i>float</i></td><td><i>b</i></td><td>color b</td></tr>
+</table></blockquote>
+<br />
+<br /><br /><br />
+
 
 <h3>wrapMousePosition</h3>
 <b>Description</b><br />
@@ -698,6 +725,28 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 </table></blockquote>
 <br />
 <br /><br /><br />
+
+<h3>2009.04.27: getFiles</h3>
+<b>Description</b><br />
+<blockquote>Get all files of a directory</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function getFiles(string path, string fileFunctionCallback, object instance)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>string</i></td><td><i>path</i></td><td>path</td></tr>
+<tr><td><i>string</i></td><td><i>fileFunctionCallback</i></td><td>file function callback</td></tr>
+<tr><td><i>object</i></td><td><i>instance</i></td>instance object (optional)<td></td></tr>
+</table></blockquote>
+<br />
+<b>Return Values</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td><td><i>numFiles</i></td><td>number of files</td></tr>
+</table></blockquote>
+<br />
+<br /><br /><br />
+
 
 <a name="runtime_function_reference_entity"><h2>Entity Function Reference</h2></a>
 
@@ -1509,9 +1558,47 @@ GIANTS Engine is a real-time 3D game engine with corresponding content pipeline 
 <b>Arguments</b><br />
 <blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
 <tr><td><i>integer</i></td><td><i>lightId</i></td><td>id of light</td></tr>
-<tr><td><i>float</i></td><td><i>r</i></td><td>r value of diffuse color</td></tr>
-<tr><td><i>float</i></td><td><i>g</i></td><td>g value of diffuse color</td></tr>
-<tr><td><i>float</i></td><td><i>b</i></td><td>b value of diffuse color</td></tr>
+<tr><td><i>float</i></td><td><i>r</i></td><td>red value of diffuse color</td></tr>
+<tr><td><i>float</i></td><td><i>g</i></td><td>green value of diffuse color</td></tr>
+<tr><td><i>float</i></td><td><i>b</i></td><td>blue value of diffuse color</td></tr>
+</table></blockquote>
+<br />
+<br /><br /><br />
+
+<h3>2009.04.27: getLightSpecularColor</h3>
+<b>Description</b><br />
+<blockquote>Get specular color of a light</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function getLightSpecularColor(integer lightId)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td><td><i>lightId</i></td><td>id of light</td></tr>
+</table></blockquote>
+<br />
+<b>Return Values</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>float</i></td><td><i>r</i></td><td>red value of specular color</td></tr>
+<tr><td><i>float</i></td><td><i>g</i></td><td>green value of specular color</td></tr>
+<tr><td><i>float</i></td><td><i>b</i></td><td>blue value of specular color</td></tr>
+</table></blockquote>
+<br />
+<br /><br /><br />
+
+<h3>2009.04.27: setLightSpecularColor</h3>
+<b>Description</b><br />
+<blockquote>Set specular color of a light</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function setLightSpecularColor(integer lightId, float r, float g, float b)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td><td><i>lightId</i></td><td>id of light</td></tr>
+<tr><td><i>float</i></td><td><i>r</i></td><td>red value of specular color</td></tr>
+<tr><td><i>float</i></td><td><i>g</i></td><td>green value of specular color</td></tr>
+<tr><td><i>float</i></td><td><i>b</i></td><td>blue value of specular color</td></tr>
 </table></blockquote>
 <br />
 <br /><br /><br />
@@ -2768,6 +2855,26 @@ See "trigger callback" in section "Custom callbacks"
 <tr><td><i>string</i></td><td><i>textureFilename</i></td><td>texture file name</td></tr>
 </table></blockquote>
 <br />
+<b>2009.04.27: Notes</b><br />
+<blockquote><i>deprecated, use createImageOverlay</i></blockquote>
+<br />
+<br /><br /><br />
+
+<h3>createImageOverlay</h3>
+<b>Description</b><br />
+<blockquote>Create overlay object</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function createImageOverlay(string textureFilename)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>string</i></td><td><i>textureFilename</i></td><td>texture file name</td></tr>
+</table></blockquote>
+<br />
+<b>Notes</b><br />
+<blockquote><i>since v4.1.3</i></blockquote>
+<br />
 <br /><br /><br />
 
 <h3>setOverlayColor</h3>
@@ -2825,6 +2932,121 @@ See "trigger callback" in section "Custom callbacks"
 <tr><td><i>float</i></td><td><i>width</i></td><td>width [0,1]</td></tr>
 <tr><td><i>float</i></td><td><i>height</i></td><td>height [0,1]</td></tr>
 </table></blockquote>
+<br />
+<br /><br /><br />
+
+
+<h3>2009.04.27: createVideoOverlay</h3>
+<b>Description</b><br />
+<blockquote>Create video overlay object</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function createVideoOverlay(string videoFilename, bool loopVideo, float soundVolume)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>string</i></td><td><i>videoFilename</i></td><td>video file name</td></tr>
+<tr><td><i>bool</i></td><td><i>loopVideo</i></td><td>loop video</td></tr>
+<tr><td><i>float</i></td><td><i>soundVolume</i></td><td>sound volume [0,1]</td></tr>
+</table></blockquote>
+<br />
+<b>Notes</b><br />
+<blockquote><i>since v4.1.3</i></blockquote>
+<br />
+<br /><br /><br />
+
+<h3>2009.04.27: playVideoOverlay</h3>
+<b>Description</b><br />
+<blockquote>Play video overlay object</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function playVideoOverlay(integer videoOverlayId)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td><td><i>videoOverlayId</i></td><td>overlay id</td></tr>
+</table></blockquote>
+<br />
+<b>Notes</b><br />
+<blockquote><i>since v4.1.3</i></blockquote>
+<br />
+<br /><br /><br />
+
+<h3>2009.04.27: stopVideoOverlay</h3>
+<b>Description</b><br />
+<blockquote>Stop video overlay object</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function stopVideoOverlay(integer videoOverlayId)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td><td><i>videoOverlayId</i></td><td>overlay id</td></tr>
+</table></blockquote>
+<br />
+<b>Notes</b><br />
+<blockquote><i>since v4.1.3</i></blockquote>
+<br />
+<br /><br /><br />
+
+<h3>2009.04.27: updateVideoOverlay</h3>
+<b>Description</b><br />
+<blockquote>Update video overlay object</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function updateVideoOverlay(integer videoOverlayId)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td><td><i>videoOverlayId</i></td><td>overlay id</td></tr>
+</table></blockquote>
+<br />
+<b>Notes</b><br />
+<blockquote><i>since v4.1.3</i></blockquote>
+<br />
+<br /><br /><br />
+
+<h3>2009.04.27: getVideoOverlayDuration</h3>
+<b>Description</b><br />
+<blockquote>Get video overlay duration</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function getVideoOverlayDuration(integer videoOverlayId)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td><td><i>videoOverlayId</i></td><td>overlay id</td></tr>
+</table></blockquote>
+<br />
+<b>Return Values</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>float</i></td><td><i>videoDuration</i></td><td>video duration in milliseconds</td></tr>
+</table></blockquote>
+<br />
+<b>Notes</b><br />
+<blockquote><i>since v4.1.3</i></blockquote>
+<br />
+<br /><br /><br />
+
+<h3>2009.04.27: isVideoOverlayPlaying</h3>
+<b>Description</b><br />
+<blockquote>Get is video overlay playing</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function isVideoOverlayPlaying(integer videoOverlayId)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td><td><i>videoOverlayId</i></td><td>overlay id</td></tr>
+</table></blockquote>
+<br />
+<b>Return Values</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>bool</i></td><td><i>isVideoOverlayPlaying</i></td><td>is video overlay playing</td></tr>
+</table></blockquote>
+<br />
+<b>Notes</b><br />
+<blockquote><i>since v4.1.3</i></blockquote>
 <br />
 <br /><br /><br />
 <a name="runtime_function_reference_sound"><h2>Sound Function Reference</h2></a>
@@ -3033,7 +3255,7 @@ See "trigger callback" in section "Custom callbacks"
 <b>Arguments</b><br />
 <blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
 <tr><td><i>integer</i></td><td><i>objectId</i></td><td>id of sample object</td></tr>    
-<tr><td><i>int</i></td><td><i>reverbPresetType</i></td><td>reverberation preset id [1, 35]</td></tr>
+<tr><td><i>int</i></td><td><i>reverbPresetType</i></td><td>reverberation preset id [1, 35 /2009.04.27: 68/]</td></tr>
 </table></blockquote>
 <br />
 <br /><br /><br/>
@@ -3175,6 +3397,58 @@ See "trigger callback" in section "Custom callbacks"
 </table></blockquote>
 <br />
 <br /><br /><br />
+
+
+<h3>2009.04.27: setStreamedSampleVolume</h3>
+<b>Description</b>
+<br />
+<blockquote>Set streamed sample volume</blockquote>
+<br />
+<b>Definition</b>
+<br />
+<blockquote><i>function setStreamedSampleVolume(integer objectId, float volume)</i></blockquote>
+<br />
+<b>Arguments</b>
+<br />
+<blockquote>
+<table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td>
+<td><i>objectId</i></td>
+<td>id of sample object</td>
+</tr><tr><td><i>float</i></td>
+<td><i>volume</i></td>
+<td>volume value</td>
+</tr></table>
+</blockquote>
+<br /><br /><br /><br />
+
+<h3>2009.04.27: getStreamedSampleVolume</h3>
+<b>Description</b>
+<br />
+<blockquote>Get streamed sample volume</blockquote>
+<br />
+<b>Definition</b>
+<br />
+<blockquote> <i>function getStreamedSampleVolume(integer objectId)</i></blockquote>
+<br />
+<b>Arguments</b>
+<br /><blockquote>
+<table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td>
+<td><i>objectId</i> </td>
+<td>id of sample object</td>
+</tr></table>
+</blockquote>
+<br /><b>Return Values</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>float</i></td>
+<td><i>volume</i></td>
+<td>volume of sample object</td></tr>
+</table>
+</blockquote>
+<br /><br /><br /><br />
+
+
 <!--AudioSource-->
 <h3>createAudioSource</h3>
 <b>Description</b><br />
@@ -3262,6 +3536,48 @@ See "trigger callback" in section "Custom callbacks"
 <a name="runtime_function_reference_XML"><h2>XML Function Reference</h2></a>
 
 <br />
+
+
+<a name="xml_path"><h3>2009.04.27: XML Path</h3></a>
+<blockquote>
+XML paths used in the getXML... and setXML... functions have the following format:<br/>
+node1.node2.....nodeN<br/>or<br/>node1.node2.....nodeN#attribute.<br/>
+<br/>
+Example:<br/>
+&lt;test&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;test1 attr="test"&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is some text<br/>
+&nbsp;&nbsp;&nbsp;&lt;/test1&gt;<br/>
+&lt;/test&gt;<br/>
+<br/>
+To get the attribute "attr", use the path test.test1#attr.<br/>
+To get the content of test1, use the path test.test1.<br/>
+</blockquote>
+
+<br />
+
+<h3>2009.04.27: createXMLFile</h3>
+<b>Description</b><br />
+<blockquote>Create an empty XML file</blockquote>
+<br />
+<b>Definition</b><br />
+<blockquote><i>function createXMLFile(string objectName, string filename, string rootNodeName)</i></blockquote>
+<br />
+<b>Arguments</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>string</i></td><td><i>objectName</i></td><td>internal name for the object created</td></tr>
+<tr><td><i>string</i></td><td><i>filename</i></td><td>filename (full path)</td></tr>
+<tr><td><i>string</i></td><td><i>rootNodeName</i></td><td>name of the root node</td></tr>
+</table></blockquote>
+<br />
+<b>Return Values</b><br />
+<blockquote><table cellpadding="3" border="1" style="border-collapse:collapse">
+<tr><td><i>integer</i></td><td><i>objectId</i></td><td>object id</td></tr>
+</table></blockquote>
+<br />
+<br /><br /><br />
+
+
 
 <h3>loadXMLFile</h3>
 <b>Description</b><br />
