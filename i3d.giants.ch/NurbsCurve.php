@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/2000/REC-xhtml1-20000126/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>i3D - NurbsCurve</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<meta name="title" content="NurbsCurve"/>
+	<meta name="description" content="i3D file format specification. Shape: NurbsCurve"/>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+</head>
+
+
+<body>
+
+<!-- main content container -->
+<div id="content_container">
+
+	<!-- header -->
+	<div id="header">
+		<div id="header_main">
+		<a href="index.php" title="i3D.giants.ch home"><img style="border: 0px;" src="images/header01.gif" width="487" height="48" title="i3D.giants.ch home" alt="i3D logo" /></a>
+		</div>
+		
+		<form action="search.php" method="get">
+		<div id="search">
+			<span><input id="query" type="text" name="search" title="Text input: query" size="24" /></span>
+			<span><input id="button" type="submit" value="Search" /></span>
+		</div>
+		</form>
+	</div>
+
+	<!-- navigation -->
+	<div id="navigation">
+		<a class="navBar" href="index.php" title="i3D.giants.ch home">HOME</a> | 
+		<a class="navBar" href="specification.php" title="i3D.giants.ch specification">SPECIFICATION</a> | 
+		<a class="navBar" href="export.php" title="i3D.giants.ch export">EXPORT</a> | 
+		<a class="navBar" href="downloads.php" title="i3D.giants.ch downloads">DOWNLOADS</a> | 
+		<a class="navBar" href="links.php" title="i3D.giants.ch links">LINKS</a> | 
+		<a class="navBar" href="contact.php" title="i3D.giants.ch contact">CONTACT</a>
+	</div>
+
+	<!-- page -->
+	<div id="page">
+<h2>1 NurbsCurve</h2>
+<table>
+<tr>
+	<th class="list" align="left" width="150"><b>Attribute</b></th>
+	<th class="list" align="left" width="300"><b>Description</b></th>
+	<th class="list" align="left" width="60"><b>Type</b></th>
+	<th class="list" align="left" width="70"><b>Optional</b></th>
+</tr>
+<tr>
+	<td class="list" valign="top">name</td>
+	<td class="list" valign="top">Name of Shape</td>
+	<td class="list" valign="top">String</td>
+	<td class="list" valign="top">No</td>
+</tr>
+<tr>
+	<td class="list" valign="top">degree</td>
+	<td class="list" valign="top">Degree</td>
+	<td class="list" valign="top">Integer</td>
+	<td class="list" valign="top">No</td>
+</tr>
+<tr>
+	<td class="list" valign="top">form</td>
+	<td class="list" valign="top">Form (stored as: "open", "close" or "periodic")</td>
+	<td class="list" valign="top">String</td>
+	<td class="list" valign="top">No</td>
+</tr>
+</table>
+<br />
+<table>
+<tr>
+	<th class="list" align="left" width="150"><b>Element</b></th>
+	<th class="list" align="left" width="300"><b>Description</b></th>
+	<th class="list" align="left" width="60"><b>Type</b></th>
+	<th class="list" align="left" width="70"><b>Cardinality</b></th>
+</tr>
+<tr>
+	<td class="list" valign="top">cv</td>
+	<td class="list" valign="top" width="300">List of Contol vertices</td>
+	<td class="list" valign="top">Complex</td>
+	<td class="list" valign="top">3..n</td>
+</tr>
+</table>
+<br />
+
+
+<br />
+<h3>1.1 cv</h3>
+<table>
+<tr>
+	<th class="list" align="left" width="150"><b>Attribute</b></th>
+	<th class="list" align="left" width="300"><b>Description</b></th>
+	<th class="list" align="left" width="60"><b>Type</b></th>
+	<th class="list" align="left" width="70"><b>Optional</b></th>
+</tr>
+<tr>
+	<td class="list" valign="top">c</td>
+	<td class="list" valign="top" width="300">Contol vertex (stored as "x y z")</td>
+	<td class="list" valign="top">String</td>
+	<td class="list" valign="top">No</td>
+</tr>
+</table>
+<br />
+
+Refer to <a href="schema/i3d-1.0.xsd">i3d-1.0.xsd (schema)</a> for further details.
+
+<br />
+<h3>1.2 Example</h3>
+<table><tr><td>
+<div id="code">
+&lt;NurbsCurve&nbsp;name="cameraPathShape"&nbsp;degree="3"&nbsp;form="periodic"&gt;<br />
+&nbsp;&nbsp;&lt;cv&nbsp;c="-160.4501888&nbsp;7.53270339&nbsp;82.4246445"/&gt;<br />
+&nbsp;&nbsp;&lt;cv&nbsp;c="-72.07301868&nbsp;2.962592169&nbsp;111.1353409"/&gt;<br />
+&nbsp;&nbsp;&lt;cv&nbsp;c="-14.67712792&nbsp;3.470019386&nbsp;126.2614971"/&gt;<br />
+&nbsp;&nbsp;&lt;cv&nbsp;c="15.12607817&nbsp;8.251274441&nbsp;47.11430616"/&gt;<br />
+&nbsp;&nbsp;&lt;cv&nbsp;c="30.05244121&nbsp;12.88635426&nbsp;26.06245926"/&gt;<br />
+&nbsp;&nbsp;&lt;cv&nbsp;c="34.16515005&nbsp;11.5454009&nbsp;-1.548135874"/&gt;<br />
+&nbsp;&nbsp;&lt;cv&nbsp;c="-86.27624814&nbsp;11.50889609&nbsp;-65.1259517"/&gt;<br />
+&nbsp;&nbsp;&lt;cv&nbsp;c="-88.5073931&nbsp;11.67542369&nbsp;-86.80101523"/&gt;<br />
+&nbsp;&nbsp;&lt;cv&nbsp;c="-174.5511508&nbsp;8.575730303&nbsp;-67.03592031"/&gt;<br />
+&nbsp;&nbsp;&lt;cv&nbsp;c="-189.2139061&nbsp;8.539901228&nbsp;-43.65303468"/&gt;<br />
+&nbsp;&nbsp;&lt;cv&nbsp;c="-199.9735277&nbsp;8.470538543&nbsp;63.31385212"/&gt;<br />
+&nbsp;&nbsp;&lt;cv&nbsp;c="-191.3309447&nbsp;8.438562697&nbsp;75.55727406"/&gt;<br />
+&nbsp;&nbsp;&lt;cv&nbsp;c="-176.8774992&nbsp;8.259085125&nbsp;81.87273025"/&gt;<br />
+&lt;/NurbsCurve&gt;<br />
+</div>
+</td></tr></table>
+
+	</div>
+
+	<!-- footer -->
+	<div id="footer">
+		&copy; 2005 <a class="linkPlain" href="http://www.giants.ch" title="GIANTS INC."><strong>GIANTS INC.</strong></a> - Ver.1.0, Rev.43, 2004-09-28	</div>
+
+</div>
+	
+</body>
+</html>
