@@ -1,0 +1,211 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-US">
+  <head>
+	<title>GIANTS Developer Network - C/C++ SDK</title>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+	<meta name="title" content="C/C++ SDK"/>
+	<meta name="description" content="C/C++ SDK - Engine Technical Document"/>
+    <link rel="stylesheet" type="text/css" href="./style.css" media="screen, tv, projection" title="Default" />
+  </head>
+  <body>
+    <!-- ##### Header ##### -->
+
+    <div id="header">
+      <div class="superHeader">
+        <span>&nbsp;</span>
+      </div>
+
+      <div class="midHeader">
+        <h1 class="headerTitle" lang="la">GDN</h1>
+        <div class="headerSubTitle" title="'GIANTS Developer Network'">
+          { GIANTS Developer Network }
+        </div>
+
+
+        <br class="doNotDisplay doNotPrint" />
+
+		<form action="search.php" method="get">
+        <div class="headerLinks">
+        	<span><input style="border:1px solid #999999; color: #666666; width:148px; font-size: 8pt;" type="text" name="search" title="Text input: query" size="24" /></span>
+			<span><input style="border:1px solid #FFFFFF; background: rgb(61,92,122); color: #FFFFFF; font-size: 9pt; font-weight:bold;" type="submit" value="Search" /></span>
+        </div>
+        </form>
+
+
+      </div>
+
+
+
+
+
+
+
+      <div class="subHeader">
+        <span class="doNotDisplay">Navigation:</span>
+
+		<a href="index.php" title="GDN - Home">Home</a> | 
+		<a href="scripting.php" title="GDN - Scripting">Scripting</a> | 
+		<a href="editor.php" title="GDN - Editor">Editor</a> | 
+		<a href="i3d.php" title="GDN - I3D">I3D</a> | 
+		<a href="artwork.php" title="GDN - Artwork">Artwork</a> | 
+		<a href="console.php" title="GDN - Console">Console</a> | 
+		<a href="techDoc.php" title="GDN - C/C++ SDK">C/C++ SDK</a>
+      </div>
+    </div>
+
+    <!-- ##### Main Copy ##### -->
+
+    <div id="main-copy">
+      <div class="rowOfBoxes">
+        <div class="twoThirds noBorderOnLeft">
+
+
+<h1>Engine Technical Document</h1>
+<br />
+<h2><a href="engineSourceCodeConventions.php">Source Code Conventions</a></h2>
+
+<br /><br />
+
+<h3>Layers Overview</h3>
+<ul>
+ <li>Base, general purpose foundation classes for 3d applications</li>
+ <li>Engine, 3d game engine</li>
+ <li>Game, application-specific code</li>
+</ul>
+
+<br /><br />
+<h3>Layers</h3>
+
+<b>Base Modules:</b>
+<ul>
+ <li>2D, font rendering</li>
+ <li>3D, 3d api abstraction (3d backend)</li>
+ <li>Audio, audio backend (background music and sample playback)</li>
+ <li>App, 3d application base functionality</li>
+ <li>Input, input backend (gamepad, mouse, keyboard)</li>
+ <li>IO, I/O related functionality</li>
+ <li>Math, mathematical classes</li>
+ <li>Util, utility classes for different purposes</li>
+ <li>Reflection, reflection functionality</li>
+ <li>Scripting, scripting interface</li>
+ <li>System, file and message dialogs</li>
+ </ul>
+
+<b>Engine Modules:</b>
+<ul>
+ <li>2D overlays</li>
+ <li>App, engine application base functionality</li>
+ <li>Geometry, meshes, particle systems, terrains and subdivision surfaces</li>
+ <li>Scenegraph,transformation hierarchy, hier. bounding volume tree</li>
+ <li>Materials, shaders and textures</li>
+ <li>Rendering, state sorting, culling</li>
+ <li>Physics, physics API binding</li>
+ <li>Animation, kinematic animations</li>
+ <li>I3D, i3d loader</li>
+ </ul>
+
+<br /><br />
+<h3>Internal module dependencies</h3>
+<ul>
+ <li>App: Geometry, Scenegraph, Materials, Rendering, Physics, Animation, I3D</li>
+ <li>Geometry: 3D, Math, Util</li>
+ <li>Scenegraph: Geometry, Materials, IO, Math, Util</li>
+ <li>Materials: 3D, IO, Math, Util</li>
+ <li>Rendering: Geometry, Materials, Scenegraph, 3D, App, Input, IO, Util</li>
+ <li>Physics: Geometry, Scenegraph, Math, Util</li>
+ <li>Animation: Scenegraph, Math, Util</li>
+ <li>I3D: Geometry, Materials, Scenegraph, IO, Math, Util</li>
+ </ul>
+
+<br /><br />
+<h3>External dependencies (libraries)</h3>
+<ul>
+ <li><a href="http://expat.sourceforge.net">Expat, XML SAX Parser</a></li>
+ <li><a href="http://www.grinninglizard.com/tinyxml">TinyXML, XML DOM Parser</a></li>
+ <li><a href="http://openil.sourceforge.net">DevIL, image library</a></li>
+ <li><a href="http://www.lua.org">LUA, script language</a></li>
+ <li><a href="http://www.libsdl.org">SDL, Simple Directmedia library</a></li>
+ <li><a href="http://developer.nvidia.com/object/cg_toolkit.html">Cg, NVIDIA Cg shader language</a></li>
+ <li><a href="http://openal.org">OpenAL, Cross-Platform 3D Audio</a></li>
+ <li><a href="http://www.winimage.com/zLibDll/minizip.html">Minizip, Zip and UnZip library</a></li>
+</ul>
+
+
+<br />
+</div>
+
+</div>
+
+
+
+
+
+<!--
+        <div class="oneThird">
+          <h1>Latest News</h1>
+
+          <p class="newsDate">24 Oct 04</p>
+          <p class="newsSummary">Template (finally!) submitted to
+            <acronym title="Open Source Web Design">OSWD</acronym>.</p>
+          <p class="newsDate">28 Apr 04</p>
+          <p class="newsSummary">Thanks to Rapha&eacute;l Enrici for spotting it!</p>
+
+          <div class="more"></div>
+
+          <p class="filler"></p>
+        </div>
+      </div>
+      <div class="rowOfBoxes dividingBorderAbove">
+        <div class="quarter noBorderOnLeft">
+          <h1>Standards</h1>
+          <p><span lang="la">Prosimii</span> is 100% compliant with
+             <acronym title="eXtensible HyperText Markup Language">XHTML</acronym> 1.0 Strict and
+             uses <acronym title="Cascading Style Sheets">CSS</acronym>.
+             <span class="doNotPrint">[Validate
+
+          <p>Unlike this design&rsquo;s inspiration, no tables have been used to layout elements
+            and text.</p>
+        </div>
+
+        <div class="quarter">
+          <h1>Stylesheet</h1>
+          <p>An external stylesheet dictates the format and layout of text in this design.</p>
+
+          <p>Thus, website-wide design changes can be achieved by editing only the stylesheet.</p>
+
+          <p class="filler"></p>
+        </div>
+
+        <div class="quarter">
+          <h1>Compatibility</h1>
+          <p><span lang="la">Prosimii&rsquo;s</span> stylesheet is more robust and comprehensive than
+            
+          <p>This design has been tested for consistent rendering in Gecko</p>
+        </div>
+
+        <div class="quarter">
+          <h1>Accessibility</h1>
+          <p><span lang="la">Prosimii</span> tentatively conforms to the
+             
+             and  guidelines for web
+             content accessibility.</p>
+
+          <p>Additionally, most document metrics (lengths, widths and spacings) are font-size
+             relative.</p>
+        </div>
+      </div>
+    </div>
+-->
+    </div>
+    <!-- ##### Footer ##### -->
+
+    <div id="footer">
+      &copy; 2007 <a target="_NEW" href="http://www.giants.ch" title="GIANTS INC.">GIANTS</a>
+    </div>
+  </body>
+</html>
+	
+	
