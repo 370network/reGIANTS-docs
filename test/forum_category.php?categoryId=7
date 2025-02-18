@@ -1,11 +1,11 @@
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-US">
   <head>
 	<title>GDN - Forum Category</title>
     <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-	<meta http-equiv="expires" content="0">
-	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="cache-control" content="no-cache" />
 	<meta name="title" content="Forum Category"/>
 	<meta name="description" content="Public Support Forum - Category"/>
     <link rel="stylesheet" type="text/css" href="./style.css" media="screen, tv, projection, print" title="Default" />
@@ -40,9 +40,9 @@
 		<div class="subHeader-left">
 			&nbsp;&nbsp;
 			<a href="index.php" title="GDN - Home">Home</a> |
-            <a href="license.php" title="GDN - License">Store</a> |			
+            <a href="license.php" title="GDN - Store">Store</a> |			
 			<a href="documentation.php" title="GDN - Documentation">Documentation</a> |
-			<a href="forum.php" title="GDN - Tutorials">Forum</a> |
+			<a href="forum.php" title="GDN - Community">Community</a> |
 			<a href="downloads.php" title="GDN - Downloads">Downloads</a>
         </div>
 
@@ -60,27 +60,117 @@
 
 <h1>Exporter - Maya Exporter</h1>
 <br />
-<a href="forum.php">[Back]</a><br /><br />
-<table border="1" rules="groups" bordercolor="silver" cellpadding="3"><thead>
-<tr style="background-color:silver; font-weight:bold;"><th width="360">Name</th><th width="64" align="center">Posts</th><th width="150">Created</th><th>Last Post</th>
+<a href="forum.php">Forum Overview</a><br /><br />
+<table border="1" rules="rows" bordercolor="silver" cellpadding="3"><thead>
+<tr style="background-color:silver; font-weight:bold;"><th width="360">Topics</th><th width="64" align="center">Posts</th><th width="150">Created</th><th>Last Post</th>
 </tr></thead>
 <tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=443">MAYA textures</a></td>
+<td style="" align="center">1</td>
+<td style="">13.08.2010 12:00</td>
+<td><small style=""><center>Pas Andre<br />5 weeks ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=442">Maya 2011 64Bit</a></td>
+<td style="" align="center">1</td>
+<td style="">10.08.2010 20:32</td>
+<td><small style=""><center>Jorrit Kühl<br />6 weeks ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=431">Custom Shader Attributes</a></td>
+<td style="" align="center">2</td>
+<td style="">26.07.2010 17:29</td>
+<td><small style=""><center>Stefan Geiger<br />2 months ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=370">Maya 2011</a></td>
+<td style="" align="center">4</td>
+<td style="">28.04.2010 10:42</td>
+<td><small style=""><center>Alexander Schwartz<br />4 months ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=362">Plugin installation problem with path</a></td>
+<td style="" align="center">4</td>
+<td style="">11.04.2010 13:19</td>
+<td><small style=""><center>Friedrich L.<br />5 months ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=344">FreezeToPivot Problems</a></td>
+<td style="" align="center">6</td>
+<td style="">16.03.2010 23:55</td>
+<td><small style=""><center>Stefan Geiger<br />3 months ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=335">Enable alpha blending</a></td>
+<td style="" align="center">3</td>
+<td style="">28.02.2010 03:59</td>
+<td><small style=""><center>Lars Erik<br />7 months ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=286">Freeze transforms make models imobile in GE</a></td>
+<td style="" align="center">3</td>
+<td style="">15.12.2009 20:05</td>
+<td><small style=""><center>Axel Nilsson<br />9 months ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=278">How to install the exporter</a></td>
+<td style="" align="center">5</td>
+<td style="">06.12.2009 13:56</td>
+<td><small style=""><center>Lars Erik<br />10 months ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=263">Bake constraint functions to key frames</a></td>
+<td style="" align="center">1</td>
+<td style="">24.11.2009 14:36</td>
+<td><small style=""><center>Benjamin G<br />10 months ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=244">Maya 2010</a></td>
+<td style="" align="center">2</td>
+<td style="">04.11.2009 16:24</td>
+<td><small style=""><center>Christian Ammann<br />10 months ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=229">Character animation</a></td>
+<td style="" align="center">6</td>
+<td style="">15.10.2009 17:23</td>
+<td><small style=""><center>Thomas H.<br />10 months ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=228">Transparent window in the game</a></td>
+<td style="" align="center">2</td>
+<td style="">07.10.2009 22:19</td>
+<td><small style=""><center>Christian Ammann<br />12 months ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=144">How do i Export sketchup buildings for LS09?</a></td>
+<td style="" align="center">3</td>
+<td style="">30.07.2009 00:41</td>
+<td><small style=""><center>Laurits østergaard<br />15 months ago</center></small>
+</td></tr>
+<tr>
+<td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=142">How do i get ring edge tool?? </a></td>
+<td style="" align="center">2</td>
+<td style="">29.07.2009 02:37</td>
+<td><small style=""><center>Christian Ammann<br />14 months ago</center></small>
+</td></tr>
+<tr>
 <td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=63">Texture path problem</a></td>
-<td align="center">2</td>
-<td>24.06.2009 12:56</td>
-<td><small><center>Christian Ammann<br />One day ago</center></small>
+<td style="" align="center">3</td>
+<td style="">24.06.2009 12:56</td>
+<td><small style=""><center>Ruprecht Malchartzeck<br />16 months ago</center></small>
 </td></tr>
 <tr>
 <td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=62">ReflectionMap resolution</a></td>
-<td align="center">2</td>
-<td>24.06.2009 12:44</td>
-<td><small><center>Stefan Geiger<br />Yesterday</center></small>
+<td style="" align="center">3</td>
+<td style="">24.06.2009 12:44</td>
+<td><small style=""><center>Ruprecht Malchartzeck<br />16 months ago</center></small>
 </td></tr>
 <tr>
 <td valign="center"><a style="text-decoration:none;" href="thread.php?categoryId=7&threadId=45">Exporter Installation (Maya 64bit)</a></td>
-<td align="center">4</td>
-<td>20.06.2009 12:36</td>
-<td><small><center>Christian Ammann<br />5 days ago</center></small>
+<td style="" align="center">4</td>
+<td style="">20.06.2009 12:36</td>
+<td><small style=""><center>Christian Ammann<br />16 months ago</center></small>
 </td></tr>
 </table>
 <br /><br />
@@ -93,45 +183,39 @@
 <div class="oneThird">
 	
     <span class="newsHeading">Latest Versions</span>
-	<p class="newsDate">18 June 2009</p>
+	<p class="newsDate">15 March 2010</p>
 	<p class="newsSummary">
 	GIANTS SDK v4.1.3<br />
-	GIANTS Editor v4.1.4<br />
-	GIANTS Script Debugger v4.1.3<br />
-	Maya Exporter Plugins v4.1.2<br />
-	MAX Exporter Plugins v4.1.2<br />
-	Blender Exporter Plugins v4.1.2<br />
+	GIANTS Script Debugger v4.1.5<br />
 	</p>
 
     <span class="newsHeading">Latest Public Versions</span>
-	<p class="newsDate">30 March 2009</p>
+	<p class="newsDate">27 May 2010</p>
 	<p class="newsSummary">
-	GIANTS Editor v4.1.2<br />
-	Maya Exporter Plugins v4.1.2<br />
-	3Ds MAX Exporter Plugins v4.1.2<br />
-	Blender Exporter Plugins v4.1.2
+	GIANTS Editor v4.1.6<br />
+	Maya Exporter Plugins v4.1.6<br />
+	3Ds MAX Exporter Plugins v4.1.6<br />
+	Blender Exporter Plugins v4.1.6
 	</p>
 	
-    <p class="more"><a href="downloads.php">» More</a></p>
+    <!--p class="more"><a href="downloads.php">» More</a></p-->
    
 
 
-	<form method="POST" action="?r=1560300181">
+	<form method="post" action="?r=608377339">
 	<input type="hidden" name="greenstoneX" value="1" />
 
 	<span class="newsHeading">Login <img border="0" src="images/misc/login.png" alt="Login" /></span>
-	<p class="newsSummary">
-	<table border="0"><tr><td>
-				<div style="font-size: 9pt; padding-bottom:5px;">User name</div>
-		<input style="border:1px solid #999999; color: #666666; width:256px; font-size: 9pt;" type="text" size="35" name="redstoneX" /><br />
-		<br />
-		<div style="font-size: 9pt; padding-bottom:5px;">Password</div>
-		<input style="border:1px solid #999999; color: #666666; width:256px; font-size: 9pt;" type="password" size="35" name="bluestoneX" /><br />
-		<br />
-		<input style="border:1px solid black; background: silver; color: black; font-size: 9pt; font-weight:bold;" type="submit" name="foobarX" value="&nbsp;Login&nbsp;" />
-		&nbsp;<small><a href="register.php">Register Now</a></small>
-	</td></tr></table>
-	</p>
+    <div class="newsSummary">
+                <div style="font-size: 9pt; padding-bottom:5px;">User name</div>
+        <input style="border:1px solid #999999; color: #666666; width:256px; font-size: 9pt;" type="text" size="35" name="redstoneX" /><br />
+        <br />
+        <div style="font-size: 9pt; padding-bottom:5px;">Password</div>
+        <input style="border:1px solid #999999; color: #666666; width:256px; font-size: 9pt;" type="password" size="35" name="bluestoneX" /><br />
+        <br />
+        <input style="border:1px solid black; background: silver; color: black; font-size: 9pt; font-weight:bold;" type="submit" name="foobarX" value="&nbsp;Login&nbsp;" />
+        &nbsp;<small><a href="register.php">Register Now</a></small>
+    </div>
 
 	</form>
 
@@ -155,7 +239,7 @@
     </div>
     <!-- ##### Footer ##### -->
     <div id="footer">
-      &copy; 2009 <a target="_NEW" href="http://www.giants-software.com" title="GIANTS Software GmbH">GIANTS Software GmbH</a>, All Rights Reserved.
+      &copy; 2010 <a target="_NEW" href="http://www.giants-software.com" title="GIANTS Software GmbH">GIANTS Software GmbH</a>, All Rights Reserved.
     </div>
   </body>
 </html>
